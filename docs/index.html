@@ -124,11 +124,11 @@
       <div class="photo-placeholder rounded-2xl h-48 md:h-56 mb-4 overflow-hidden">
         <img 
           src="Dia_0_de_novios_la_amo_mucho.jpeg" 
-          alt="Nuestra primera foto juntos"
+          alt="Nuestra primera foto de novios"
           class="w-full h-full object-cover"
         />
       </div>
-      <p id="photo-caption-1" class="text-center text-rose-700 font-medium font-display text-lg italic">📸 Nuestra primera foto juntos</p>
+      <p id="photo-caption-1" class="text-center text-rose-700 font-medium font-display text-lg italic">📸 Nuestra primera foto de novios</p>
      </div><!-- Photo Card 2 -->
      <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-rose-100 hover:shadow-2xl transition-shadow duration-300">
       <div class="photo-placeholder rounded-2xl h-48 md:h-56 mb-4 overflow-hidden">
@@ -144,7 +144,7 @@
     <div class="card bg-gradient-to-br from-white/95 to-rose-50/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 mb-6 border border-rose-100">
      <div class="flex items-center justify-center mb-4"><span class="text-3xl">💌</span>
      </div>
-     <p id="love-message" class="text-center text-rose-800 text-lg md:text-xl leading-relaxed font-medium">Desde que llegaste a mi vida, cada día es más especial. Tu sonrisa ilumina mis mañanas y tu amor llena mi corazón de felicidad. Eres mi persona favorita en todo el mundo.</p>
+     <p id="love-message" class="text-center text-rose-800 text-lg md:text-xl leading-relaxed font-medium">Desde que Dios te puso en mi vida, has llenado cada rincon de colores, cada momento de musica, cada experiencia de felicidad, es imposible imaginar mi vida sin ti. Eres el amor de mi vida Patricia Athalya Arce Piña</p>
     </div><!-- Song Card -->
     <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 mb-6 border border-rose-100">
      <div class="flex flex-col md:flex-row items-center gap-6">
@@ -156,7 +156,7 @@
       </div>
       <div class="flex-grow text-center md:text-left">
        <p class="text-rose-400 text-sm font-semibold uppercase tracking-wider mb-1">Nuestra Canción</p>
-       <a href="https://www.youtube.com/watch?v=TU_ID_DE_VIDEO" target="_blank" rel="noopener noreferrer" class="inline-block hover:underline"> <h3 id="song-title" class="font-display text-xl md:text-2xl text-rose-800 font-bold mb-2 cursor-pointer"> 🎵 Un Pacto con Dios </h3> </a>
+       <a href="https://www.youtube.com/watch?v=boA7r9_aTyk" target="_blank" rel="noopener noreferrer" class="inline-block hover:underline"> <h3 id="song-title" class="font-display text-xl md:text-2xl text-rose-800 font-bold mb-2 cursor-pointer"> 🎵 Un Pacto con Dios </h3> </a>
        <p class="text-rose-600 text-sm">Para la chica más tierna, y amor de mi vida</p>
       </div>
       <div class="music-wave flex-shrink-0">
@@ -173,8 +173,8 @@
       <div class="flex justify-center gap-2 mb-4"><span class="text-2xl">✨</span> <span class="text-2xl">💝</span> <span class="text-2xl">✨</span>
       </div>
       <h2 class="font-display text-2xl md:text-3xl text-rose-800 font-bold mb-4">La Invitación</h2>
-      <p id="invitation-text" class="text-rose-700 text-lg md:text-xl leading-relaxed mb-6">Me encantaría pasar este San Valentín contigo. ¿Te gustaría acompañarme en una cena especial donde podamos celebrar nuestro amor? Prometo hacer de este día algo inolvidable para ti.</p>
-      <div class="flex justify-center gap-4 flex-wrap"><button class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2"> <span>¡Sí, acepto!</span> <span>💕</span> </button>
+      <p id="invitation-text" class="text-rose-700 text-lg md:text-xl leading-relaxed mb-6">Que dices si vamos a celebrar por el amor tan bonito que Dios nos a dado Athalyta mía?</p>
+      <div class="flex justify-center gap-4 flex-wrap relative"><button id="yesBtn" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2"> <span>¡Sí, acepto!</span> <span>💕</span> </button><button id="noBtn" class="bg-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-200 absolute"> Lo pensaré 🤔 </button>
       </div>
      </div>
     </div><!-- Footer -->
@@ -184,6 +184,32 @@
    </div>
   </div>
   <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const song = document.getElementById('love-song');
+    noBtn.style.left = "50%";
+    noBtn.style.top = "0";
+    noBtn.style.transform = "translateX(-50%)";
+    noBtn.addEventListener('mouseenter', () => {
+      const container = noBtn.parentElement;
+      const maxX = container.offsetWidth - noBtn.offsetWidth;
+      const maxY = container.offsetHeight - noBtn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      song.volume = 0.7;
+      song.play();
+
+      yesBtn.innerHTML = "¡Sabía que dirías que sí! 💖";
+     noBtn.style.display = "none";
+    });
+
     const defaultConfig = {
       main_title: "¿Quieres ser mi San Valentín?",
       love_message: "Desde que llegaste a mi vida, cada día es más especial. Tu sonrisa ilumina mis mañanas y tu amor llena mi corazón de felicidad. Eres mi persona favorita en todo el mundo.",
