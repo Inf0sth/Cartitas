@@ -120,7 +120,7 @@
      <h1 id="main-title" class="font-display text-3xl md:text-5xl font-bold text-rose-800 leading-tight">¿Quieres ser mi San Valentín?</h1>
     </header><!-- Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"><!-- Photo Card 1 -->
-     <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-rose-100 hover:shadow-2xl transition-shadow duration-300">
+     <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 p-6 min-h-[420px] border border-rose-100 hover:shadow-2xl transition-shadow duration-300">
       <div class="photo-placeholder rounded-2xl h-48 md:h-56 mb-4 overflow-hidden">
         <img 
           src="Dia_0_de_novios_la_amo_mucho.jpeg" 
@@ -130,15 +130,15 @@
       </div>
       <p id="photo-caption-1" class="text-center text-rose-700 font-medium font-display text-lg italic">📸 Nuestra primera foto de novios</p>
      </div><!-- Photo Card 2 -->
-     <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-rose-100 hover:shadow-2xl transition-shadow duration-300">
+     <div class="card bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 p-6 min-h-[420px] border border-rose-100 hover:shadow-2xl transition-shadow duration-300">
       <div class="photo-placeholder rounded-2xl h-48 md:h-56 mb-4 overflow-hidden">
         <img 
           src="arbolito1.jpeg" 
-          alt="Un momento especial"
+          alt="La más reciente"
           class="w-full h-full object-cover"
         />
       </div>
-      <p id="photo-caption-2" class="text-center text-rose-700 font-medium font-display text-lg italic">💕 Un momento especial</p>
+      <p id="photo-caption-2" class="text-center text-rose-700 font-medium font-display text-lg italic">💕 La más reciente</p>
      </div>
     </div><!-- Love Message Card -->
     <div class="card bg-gradient-to-br from-white/95 to-rose-50/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 mb-6 border border-rose-100">
@@ -187,7 +187,7 @@
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
     const song = document.getElementById('love-song');
-    noBtn.style.left = "50%";
+    noBtn.style.left = "20%";
     noBtn.style.top = "0";
     noBtn.style.transform = "translateX(-50%)";
     noBtn.addEventListener('mouseenter', () => {
@@ -214,9 +214,9 @@
       main_title: "¿Quieres ser mi San Valentín?",
       love_message: "Desde que llegaste a mi vida, cada día es más especial. Tu sonrisa ilumina mis mañanas y tu amor llena mi corazón de felicidad. Eres mi persona favorita en todo el mundo.",
       invitation_text: "Me encantaría pasar este San Valentín contigo. ¿Te gustaría acompañarme en una cena especial donde podamos celebrar nuestro amor? Prometo hacer de este día algo inolvidable para ti.",
-      photo_caption_1: "📸 Nuestra primera foto juntos",
-      photo_caption_2: "💕 Un momento especial",
-      song_title: "🎵 Perfect - Ed Sheeran",
+      photo_caption_1: "📸 Nuestra primera foto de novios",
+      photo_caption_2: "💕 La más reciente",
+      song_title: "🎵 Un Pacto con Dios",
       background_color: "#fef9f3",
       card_color: "#ffffff",
       text_color: "#9f1239",
