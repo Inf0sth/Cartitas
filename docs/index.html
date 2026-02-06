@@ -216,12 +216,14 @@
         noBtn.style.top = `${newY}px`;
       }
     });
-
-    yesBtn.addEventListener('click', () => {
-      noBtn.style.display = "none";
-      alert("💖 ¡Sabía que dirías que sí!");
+    document.addEventListener('DOMContentLoaded', () => {
+      const yesBtn = document.getElementById('yesBtn');
+      const noBtn = document.getElementById('noBtn');
+      yesBtn.addEventListener('click', () => {
+        if (noBtn) noBtn.style.display = "none";
+        alert("💖 ¡Sabía que dirías que sí!");
+      });
     });
-
 
     const defaultConfig = {
       main_title: "¿Quieres ser mi San Valentín?",
