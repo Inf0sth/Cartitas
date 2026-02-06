@@ -183,7 +183,6 @@
     </footer>
    </div>
   </div>
-  <div id="toast" class="fixed top-6 right-6 bg-rose-500 text-white px-6 py-4 rounded-2xl shadow-xl text-lg font-semibold opacity-0 pointer-events-none transition-all duration-500 scale-95 z-50"> 💖 ¡Sabía que dirías que sí! </div>
   <script>
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
@@ -218,17 +217,11 @@
       }
     });
 
-    const toast = document.getElementById('toast');
     yesBtn.addEventListener('click', () => {
       noBtn.style.display = "none";
-
-      toast.classList.remove('opacity-0', 'scale-95');
-      toast.classList.add('opacity-100', 'scale-100');
-      setTimeout(() => {
-        toast.classList.remove('opacity-100', 'scale-100');
-        toast.classList.add('opacity-0', 'scale-95');
-      }, 3000);
+      alert("💖 ¡Sabía que dirías que sí!");
     });
+
 
     const defaultConfig = {
       main_title: "¿Quieres ser mi San Valentín?",
