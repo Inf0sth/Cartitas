@@ -187,19 +187,34 @@
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
     const song = document.getElementById('love-song');
+    const SAFE_DISTANCE = 180;
     noBtn.style.left = "20%";
-    noBtn.style.top = "0";
+    noBtn.style.top = "10px";
     noBtn.style.transform = "translateX(-50%)";
-    noBtn.addEventListener('mouseenter', () => {
-      const container = noBtn.parentElement;
-      const maxX = container.offsetWidth - noBtn.offsetWidth;
-      const maxY = container.offsetHeight - noBtn.offsetHeight;
+    noBtn.addEventListener('mousemove', (e) => {
+      const rect = noBtn.getBoundingClientRect();
+      const btnCenterX = rect.left + rect.width / 2;
+      const btnCenterY = rect.top + rect.height / 2;
 
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
+      const dx = e.clientX - btnCenterX;
+      const dy = e.clientY - btnCenterY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
 
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
+      if (distance < SAFE_DISTANCE) {
+        const container = noBtn.parentElement.getBoundingClientRect();
+
+        let newX;
+        if (dx > 0) {
+          newX = Math.random() * (container.width / 2);
+        } else {
+          newX = container.width / 2 + Math.random() * (container.width / 2);
+        }
+
+        const newY = Math.random() * 60;
+
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+      }
     });
 
     yesBtn.addEventListener('click', () => {
